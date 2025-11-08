@@ -32,6 +32,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity debouncer is
+
+    generic(
+        STABLE_COUNT : integer := 200000
+    );
+
   Port ( 
     clk : in std_logic;
     btn_in : in std_logic;
@@ -41,10 +46,51 @@ end debouncer;
 
 architecture Behavioral of debouncer is
 
-
-
-
+signal D1, D2 : std_logic;
+signal Q1, Q2 : std_logic;
+signal counter : integer range 0 to STABLE_COUNT := 0; 
+signal stable_btn : std_logic;
 begin
+
+D1 <= btn_in;
+
+
+FF1: process(clk)
+begin 
+    if rising_edge(clk) then
+        Q1 <= D1;
+    end if;
+end process;
+
+D2 <= Q1;
+
+FF2: process(clk)
+begin
+    if rising_edge(clk) then
+        Q2 <= D2;
+    end if;
+end process;
+
+
+DEBOUNCE_LOGIC: process(clk)
+begin 
+    if rising_edge(clk) then 
+        if Q2 = stable_btn then
+            if counter < STABLE_COUNT then
+                counter <= counter + 1;
+            end if;
+        else 
+            counter <= 0;    
+        end if;
+        
+        if counter = STABLE_COUNT then
+            stable_btn <= Q2;
+        end if;
+    end if;
+end process;
+
+
+btn_out <= stable_btn;
 
 
 end Behavioral;
