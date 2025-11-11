@@ -51,8 +51,11 @@ signal current_state, next_state : state_type;
 signal col_index : integer range -1 to 3 := -1;
 signal scan_tick : std_logic;
 signal counter : integer range 0 to 100000 := 0;
-
-
+signal last_key : std_logic_vector(3 downto 0) := x"F";
+signal key_register : std_logic_vector(3 downto 0) := x"F";
+signal stable_key : std_logic_vector(3 downto 0);
+signal stable_cnt : integer range 0 to 3 := 0;
+signal raw_key : std_logic_vector(3 downto 0);
 begin
 
 logica_stari: process(clk, reset)
@@ -105,35 +108,35 @@ begin
     case current_state is
         when S_ROW0 => 
             case col_index is
-                when 0 => key_code <= X"1";
-                when 1 => key_code <= X"2";
-                when 2 => key_code <= X"3";
-                when 3 => key_code <= X"A";
-                when others => key_code <= X"F";   
+                when 0 => raw_key <= X"1";
+                when 1 => raw_key <= X"2";
+                when 2 => raw_key <= X"3";
+                when 3 => raw_key <= X"A";
+                when others => raw_key <= X"F";   
             end case;
         when S_ROW1 => 
             case col_index is 
-                when 0 => key_code <= X"4";
-                when 1 => key_code <= X"5";
-                when 2 => key_code <= X"6";
-                when 3 => key_code <= X"B";
-                when others => key_code <= X"F";     
+                when 0 => raw_key <= X"4";
+                when 1 => raw_key <= X"5";
+                when 2 => raw_key <= X"6";
+                when 3 => raw_key <= X"B";
+                when others => raw_key <= X"F";     
             end case;
         when S_ROW2 =>
             case col_index is
-                when 0 => key_code <= X"7";
-                when 1 => key_code <= X"8";
-                when 2 => key_code <= X"9";
-                when 3 => key_code <= X"C";
-                when others => key_code <= X"F";
+                when 0 => raw_key <= X"7";
+                when 1 => raw_key <= X"8";
+                when 2 => raw_key <= X"9";
+                when 3 => raw_key <= X"C";
+                when others => raw_key <= X"F";
             end case;
         when S_ROW3 => 
             case col_index is 
-               when 0 => key_code <= X"E";
-               when 1 => key_code <= X"0";
-               when 2 => key_code <= X"F";
-               when 3 => key_code <= X"D";
-               when others => key_code <= X"F"; 
+               when 0 => raw_key <= X"E";
+               when 1 => raw_key <= X"0";
+               when 2 => raw_key <= X"F";
+               when 3 => raw_key <= X"D";
+               when others => raw_key <= X"F"; 
             end case;
     end case;
 end process;
@@ -153,6 +156,46 @@ begin
             scan_tick <= '0';
        end if;
    end if;
+end process;
+
+debounce: process(clk, reset)
+begin 
+    if reset = '1' then 
+        key_register <= x"F";
+        stable_cnt <= 0;
+        stable_key <= x"F";
+    elsif rising_edge(clk) and scan_tick = '1' then
+        if raw_key = key_register then
+            if stable_cnt < 2 then 
+                stable_cnt <= stable_cnt + 1;
+            end if;
+            
+            if stable_cnt = 2 then 
+                stable_key <= key_register;
+            end if;            
+        else 
+           stable_cnt <= 0;
+           key_register <= raw_key;
+        end if;       
+    end if;
+end process;
+
+key_code <= stable_key;
+
+keyPulse: process(clk, reset)
+begin 
+    if reset = '1' then
+        last_key <= x"F";
+        key_pulse <= '0';
+    elsif rising_edge(clk) and scan_tick = '1' then 
+        if stable_key /= x"F" and stable_key /= last_key then
+            key_pulse <= '1';
+        else 
+            key_pulse <= '0'; 
+        end if;
+        
+        last_key <= stable_key;
+    end if;
 end process;
 
 
