@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1762539270" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PWM_Unit.dcp">
-  <File Type="PA-TCL" Name="top_module.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_module_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
-  <File Type="RDS-RDS" Name="top_module.vds"/>
-  <File Type="RDS-UTIL" Name="top_module_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="top_module_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="top_module.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="top_module_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="top_module_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1763392407" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PWM_Unit.dcp">
+  <File Type="PA-TCL" Name="PWM_Unit.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="PWM_Unit_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="PWM_Unit_reports.tcl"/>
+  <File Type="RDS-RDS" Name="PWM_Unit.vds"/>
+  <File Type="RDS-UTIL" Name="PWM_Unit_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="PWM_Unit_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="PWM_Unit.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="PWM_Unit_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="PWM_Unit_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/top_module.vhd">
+    <File Path="$PSRCDIR/sources_1/new/PWM_Unit.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/PWM_Unit.vhd">
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/debouncer.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/keyPad_Unit.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -26,13 +41,19 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top_module"/>
+      <Option Name="TopModule" Val="PWM_Unit"/>
+      <Option Name="TopLib" Val="xil_defaultlib"/>
+      <Option Name="TopArchitecture" Val="Behavioral"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/PWM_Unit.vhd"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="C:/Users/todit/Downloads/zybo.xdc">
+    <File Path="$PSRCDIR/constrs_1/imports/Downloads/zybo.xdc">
       <FileInfo>
+        <Attr Name="ImportPath" Val="C:/Users/todit/Downloads/zybo.xdc"/>
+        <Attr Name="ImportTime" Val="1762539021"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
