@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log PWM_Unit.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source PWM_Unit.tcl
+EAStep vivado -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl

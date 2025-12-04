@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1763392407" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PWM_Unit.dcp">
-  <File Type="PA-TCL" Name="PWM_Unit.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="PWM_Unit_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="PWM_Unit_reports.tcl"/>
-  <File Type="RDS-RDS" Name="PWM_Unit.vds"/>
-  <File Type="RDS-UTIL" Name="PWM_Unit_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="PWM_Unit_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="PWM_Unit.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="PWM_Unit_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="PWM_Unit_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1764762746" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PWM_Unit.dcp">
+  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
+  <File Type="RDS-UTIL" Name="design_1_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="design_1_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/PWM_Unit.vhd">
@@ -17,9 +17,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/keyPad_Unit.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -32,28 +44,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/keyPad_Unit.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="PWM_Unit"/>
-      <Option Name="TopLib" Val="xil_defaultlib"/>
-      <Option Name="TopArchitecture" Val="Behavioral"/>
-      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/PWM_Unit.vhd"/>
+      <Option Name="TopModule" Val="design_1_wrapper"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/imports/Downloads/zybo.xdc">
+    <File Path="$PSRCDIR/constrs_1/new/proiectZybo.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="C:/Users/todit/Downloads/zybo.xdc"/>
-        <Attr Name="ImportTime" Val="1762539021"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -80,4 +80,9 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_keyPad_Unit_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_quad_spi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_PWM_Unit_0_0"/>
 </GenRun>

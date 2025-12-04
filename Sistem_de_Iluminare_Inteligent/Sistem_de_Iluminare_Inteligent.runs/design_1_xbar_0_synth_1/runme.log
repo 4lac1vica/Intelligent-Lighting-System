@@ -1,0 +1,121 @@
+
+*** Running vivado
+    with args -log design_1_xbar_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_xbar_0.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Wed Dec  3 13:52:31 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+ERROR: [Common 17-249] Param 'device.trackDeviceDataLoading' is already registered
+ERROR: [Common 17-249] Param 'device.disableTemplateLoading' is already registered
+ERROR: [Common 17-249] Param 'device.loadAllNodeTemplates' is already registered
+ERROR: [Common 17-249] Param 'device.disableCostCodes' is already registered
+ERROR: [Common 17-249] Param 'device.hotfabricfactor' is already registered
+ERROR: [Common 17-249] Param 'device.precomputedNodes' is already registered
+ERROR: [Common 17-249] Param 'device.dontDisconnectWires' is already registered
+ERROR: [Common 17-249] Param 'device.modifyReserveProperty' is already registered
+ERROR: [Common 17-249] Param 'device.leakDevices' is already registered
+ERROR: [Common 17-249] Param 'device.derivedDieDevice' is already registered
+ERROR: [Common 17-249] Param 'device.mungeCookedNames' is already registered
+ERROR: [Common 17-249] Param 'device.disableOracleGroups' is already registered
+ERROR: [Common 17-249] Param 'device.disableOracleTileWireGroups' is already registered
+ERROR: [Common 17-249] Param 'device.enablePhysicalDataLoad' is already registered
+ERROR: [Common 17-249] Param 'device.enablePhysicalDataDump' is already registered
+ERROR: [Common 17-249] Param 'device.quietRpmGridCollisions' is already registered
+ERROR: [Common 17-249] Param 'arch.debugParse' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.dlyestfactor' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.enableDelayEqnDumping' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.enableVoltageScaleDelayCalc' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.voltageForDelayCalc' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.referenceVoltageForDelayCalc' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.powerConfigDir' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.multiSegmentWireHquad' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.wrdFile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.SupportClockOverlay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.clockOverlayDelayFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.rtProd2XmlCheckxml' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.nodeProdToEval' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.clockOverlayFile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander.maxforwarddepth' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander.forwardfilter' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander.maxreversedepth' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander.reversefilter' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander.reversedepth' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander.reversefilter1' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.expander.reversefilter2' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.cfgFile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRouting' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingVerbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingIgnoreSites' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingSliceTypes' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.cfg' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.elbertCLBXYSize' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.intTileColsPerIntColumn' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Monitor' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.ReportFileName' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.GVerbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Verbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.QORDefaults' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.GNLDefaults' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Threads' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.logfile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.addInterposerRouting' is already registered
+ERROR: [Common 17-249] Param 'device.externalEstimator' is already registered
+ERROR: [Common 17-249] Param 'device.mappingFile' is already registered
+ERROR: [Common 17-249] Param 'device.xmlDstFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.xmlDstFile_5lev' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.delayModel' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.delayModel_5lev' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.floorplan' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.intXml' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.muxLayout' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.overwriteTileGridDistWithCSV' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.paspdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.nonlibPaspdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.padrFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.padrFileAsText' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pbPadrFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.libertyFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.evalBlackBoxDelays' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.muxequivsFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaArchFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaDevice' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaDeviceFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.enableLagunaFlow' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dumpLagunaDeviceXML' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.fsrRows' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.fsrCols' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.interDieBridgeRows' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.interDieBridgeCols' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pinDlysFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.epsCritUnaccountedDlyThreshold' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.verbosePinDlys' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pinIgnoreFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.overlapIgnoreFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.overlapIgnoreInstsFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.constSourcesFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dmInfo' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.HDXMIallowMuxMissingInLayout' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dstGenMode' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketWithCrossings' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketPostPlaceWithCalc' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketPostRouteWithCalc' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.epsReportEstimatedDelay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dumpGrids' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bypassDistanceDelays' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.boundingBoxDelay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.phyXDistanceScale' is already registered
+INFO: [Common 17-14] Message 'Common 17-249' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+ERROR: [Common 17-39] 'load_features' failed due to earlier errors.
+
+    while executing
+"load_features base core vivado board tclstore writecfgmem"
+    (file "D:/SSC/Vivado/2024.1/lib/scripts/rdi/products/Vivado.tcl" line 10)
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  3 13:52:37 2025...
