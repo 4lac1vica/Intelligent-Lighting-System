@@ -77,7 +77,7 @@ set_property ip_output_repo d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sis
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.srcs/sources_1/bd/design_1/ip/design_1_xbar_0_2/design_1_xbar_0.xci
+read_ip -quiet D:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.srcs/sources_1/bd/design_1/ip/design_1_xbar_0_2/design_1_xbar_0.xci
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_xbar_0_2/design_1_xbar_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }

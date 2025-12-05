@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Wed Dec  3 13:50:27 2025
+//Date        : Fri Dec  5 10:49:26 2025
 //Host        : TinuPC04 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=18,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=24,da_board_cnt=7,da_clkrst_cnt=9,da_ps7_cnt=3,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=18,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=24,da_board_cnt=7,da_clkrst_cnt=11,da_ps7_cnt=3,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -40,14 +40,6 @@ module design_1
     pwm_signal,
     row_out,
     sck,
-    spi_rtl_io0_t,
-    spi_rtl_io1_i,
-    spi_rtl_io1_o,
-    spi_rtl_io1_t,
-    spi_rtl_sck_i,
-    spi_rtl_sck_t,
-    spi_rtl_ss_i,
-    spi_rtl_ss_t,
     sws);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
@@ -77,30 +69,14 @@ module design_1
   output pwm_signal;
   output [3:0]row_out;
   output sck;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl IO0_T" *) output spi_rtl_io0_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl IO1_I" *) input spi_rtl_io1_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl IO1_O" *) output spi_rtl_io1_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl IO1_T" *) output spi_rtl_io1_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl SCK_I" *) input spi_rtl_sck_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl SCK_T" *) output spi_rtl_sck_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl SS_I" *) input [0:0]spi_rtl_ss_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl SS_T" *) output spi_rtl_ss_t;
   input [0:0]sws;
 
   wire PWM_Unit_0_pwm_signal;
   wire [7:0]axi_duty_cycle_gpio_io_o;
-  wire axi_quad_spi_0_SPI_0_IO0_T;
-  wire axi_quad_spi_0_SPI_0_IO1_I;
-  wire axi_quad_spi_0_SPI_0_IO1_O;
-  wire axi_quad_spi_0_SPI_0_IO1_T;
-  wire axi_quad_spi_0_SPI_0_SCK_I;
-  wire axi_quad_spi_0_SPI_0_SCK_T;
-  wire [0:0]axi_quad_spi_0_SPI_0_SS_I;
-  wire axi_quad_spi_0_SPI_0_SS_T;
   wire axi_quad_spi_0_io0_o;
   wire axi_quad_spi_0_sck_o;
   wire [0:0]axi_quad_spi_0_ss_o;
-  wire [3:0]col_in_0_1;
+  wire [3:0]col_in_1;
   wire [0:0]gpio_io_i_0_1;
   wire io0_i_0_1;
   wire [3:0]keyPad_Unit_0_key_code;
@@ -254,10 +230,7 @@ module design_1
   wire ps7_0_axi_periph_M04_AXI_WVALID;
   wire [0:0]rst_ps7_0_50M_peripheral_aresetn;
 
-  assign axi_quad_spi_0_SPI_0_IO1_I = spi_rtl_io1_i;
-  assign axi_quad_spi_0_SPI_0_SCK_I = spi_rtl_sck_i;
-  assign axi_quad_spi_0_SPI_0_SS_I = spi_rtl_ss_i[0];
-  assign col_in_0_1 = col_in[3:0];
+  assign col_in_1 = col_in[3:0];
   assign cs[0] = axi_quad_spi_0_ss_o;
   assign gpio_io_i_0_1 = sws[0];
   assign io0_i_0_1 = miso;
@@ -265,12 +238,7 @@ module design_1
   assign pwm_signal = PWM_Unit_0_pwm_signal;
   assign row_out[3:0] = keyPad_Unit_0_row_out;
   assign sck = axi_quad_spi_0_sck_o;
-  assign spi_rtl_io0_t = axi_quad_spi_0_SPI_0_IO0_T;
-  assign spi_rtl_io1_o = axi_quad_spi_0_SPI_0_IO1_O;
-  assign spi_rtl_io1_t = axi_quad_spi_0_SPI_0_IO1_T;
-  assign spi_rtl_sck_t = axi_quad_spi_0_SPI_0_SCK_T;
-  assign spi_rtl_ss_t = axi_quad_spi_0_SPI_0_SS_T;
-  design_1_PWM_Unit_0_0 PWM_Unit_0
+  design_1_PWM_Unit_0_1 PWM_Unit_0
        (.clk(processing_system7_0_FCLK_CLK0),
         .duty_cycle(axi_duty_cycle_gpio_io_o),
         .pwm_signal(PWM_Unit_0_pwm_signal),
@@ -363,10 +331,7 @@ module design_1
        (.ext_spi_clk(processing_system7_0_FCLK_CLK0),
         .io0_i(io0_i_0_1),
         .io0_o(axi_quad_spi_0_io0_o),
-        .io0_t(axi_quad_spi_0_SPI_0_IO0_T),
-        .io1_i(axi_quad_spi_0_SPI_0_IO1_I),
-        .io1_o(axi_quad_spi_0_SPI_0_IO1_O),
-        .io1_t(axi_quad_spi_0_SPI_0_IO1_T),
+        .io1_i(1'b0),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(ps7_0_axi_periph_M04_AXI_ARADDR[6:0]),
         .s_axi_aresetn(rst_ps7_0_50M_peripheral_aresetn),
@@ -386,15 +351,13 @@ module design_1
         .s_axi_wready(ps7_0_axi_periph_M04_AXI_WREADY),
         .s_axi_wstrb(ps7_0_axi_periph_M04_AXI_WSTRB),
         .s_axi_wvalid(ps7_0_axi_periph_M04_AXI_WVALID),
-        .sck_i(axi_quad_spi_0_SPI_0_SCK_I),
+        .sck_i(1'b0),
         .sck_o(axi_quad_spi_0_sck_o),
-        .sck_t(axi_quad_spi_0_SPI_0_SCK_T),
-        .ss_i(axi_quad_spi_0_SPI_0_SS_I),
-        .ss_o(axi_quad_spi_0_ss_o),
-        .ss_t(axi_quad_spi_0_SPI_0_SS_T));
-  design_1_keyPad_Unit_0_0 keyPad_Unit_0
+        .ss_i(1'b0),
+        .ss_o(axi_quad_spi_0_ss_o));
+  design_1_keyPad_Unit_0_1 keyPad_Unit_0
        (.clk(processing_system7_0_FCLK_CLK0),
-        .col_in(col_in_0_1),
+        .col_in(col_in_1),
         .key_code(keyPad_Unit_0_key_code),
         .key_pulse(keyPad_Unit_0_key_pulse),
         .reset(rst_ps7_0_50M_peripheral_aresetn),

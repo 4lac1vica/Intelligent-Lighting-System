@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Wed Dec  3 13:50:27 2025
+//Date        : Fri Dec  5 10:49:26 2025
 //Host        : TinuPC04 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -39,12 +39,6 @@ module design_1_wrapper
     pwm_signal,
     row_out,
     sck,
-    spi_rtl_io0_t,
-    spi_rtl_io1_io,
-    spi_rtl_sck_i,
-    spi_rtl_sck_t,
-    spi_rtl_ss_i,
-    spi_rtl_ss_t,
     sws);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -74,12 +68,6 @@ module design_1_wrapper
   output pwm_signal;
   output [3:0]row_out;
   output sck;
-  output spi_rtl_io0_t;
-  inout spi_rtl_io1_io;
-  input spi_rtl_sck_i;
-  output spi_rtl_sck_t;
-  input [0:0]spi_rtl_ss_i;
-  output spi_rtl_ss_t;
   input [0:0]sws;
 
   wire [14:0]DDR_addr;
@@ -110,15 +98,6 @@ module design_1_wrapper
   wire pwm_signal;
   wire [3:0]row_out;
   wire sck;
-  wire spi_rtl_io0_t;
-  wire spi_rtl_io1_i;
-  wire spi_rtl_io1_io;
-  wire spi_rtl_io1_o;
-  wire spi_rtl_io1_t;
-  wire spi_rtl_sck_i;
-  wire spi_rtl_sck_t;
-  wire [0:0]spi_rtl_ss_i;
-  wire spi_rtl_ss_t;
   wire [0:0]sws;
 
   design_1 design_1_i
@@ -150,18 +129,5 @@ module design_1_wrapper
         .pwm_signal(pwm_signal),
         .row_out(row_out),
         .sck(sck),
-        .spi_rtl_io0_t(spi_rtl_io0_t),
-        .spi_rtl_io1_i(spi_rtl_io1_i),
-        .spi_rtl_io1_o(spi_rtl_io1_o),
-        .spi_rtl_io1_t(spi_rtl_io1_t),
-        .spi_rtl_sck_i(spi_rtl_sck_i),
-        .spi_rtl_sck_t(spi_rtl_sck_t),
-        .spi_rtl_ss_i(spi_rtl_ss_i),
-        .spi_rtl_ss_t(spi_rtl_ss_t),
         .sws(sws));
-  IOBUF spi_rtl_io1_iobuf
-       (.I(spi_rtl_io1_o),
-        .IO(spi_rtl_io1_io),
-        .O(spi_rtl_io1_i),
-        .T(spi_rtl_io1_t));
 endmodule

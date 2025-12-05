@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  3 13:50:28 2025" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec  5 10:49:27 2025" VIVADOVERSION="2024.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.2" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -69,7 +69,7 @@
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_RAS_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" NAME="DDR_reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
+    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_DRSTB"/>
       </CONNECTIONS>
@@ -114,13 +114,21 @@
         <CONNECTION INSTANCE="keyPad_Unit_0" PORT="col_in"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="0" NAME="cs" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="0" NAME="cs" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ss_o"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" NAME="miso" SIGIS="undef" SIGNAME="External_Ports_miso">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_i"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="mosi" SIGIS="undef"/>
+    <PORT DIR="O" NAME="mosi" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_o"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="O" NAME="pwm_signal" SIGIS="undef" SIGNAME="PWM_Unit_0_pwm_signal">
       <CONNECTIONS>
         <CONNECTION INSTANCE="PWM_Unit_0" PORT="pwm_signal"/>
@@ -131,45 +139,9 @@
         <CONNECTION INSTANCE="keyPad_Unit_0" PORT="row_out"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="sck" SIGIS="undef"/>
-    <PORT DIR="O" NAME="spi_rtl_io0_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_t">
+    <PORT DIR="O" NAME="sck" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_t"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="spi_rtl_io1_i" SIGIS="undef" SIGNAME="axi_quad_spi_0_io1_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io1_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="spi_rtl_io1_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_io1_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io1_o"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="spi_rtl_io1_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_io1_t">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io1_t"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="spi_rtl_sck_i" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="sck_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="spi_rtl_sck_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_t">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="sck_t"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="0" NAME="spi_rtl_ss_i" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ss_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="spi_rtl_ss_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_t">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ss_t"/>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="sck_o"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="0" NAME="sws" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sws">
@@ -224,18 +196,6 @@
         <PORTMAP LOGICAL="PS_SRSTB" PHYSICAL="FIXED_IO_ps_srstb"/>
       </PORTMAPS>
     </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="axi_quad_spi_0_SPI_0" NAME="spi_rtl" TYPE="INITIATOR">
-      <PORTMAPS>
-        <PORTMAP LOGICAL="IO0_T" PHYSICAL="spi_rtl_io0_t"/>
-        <PORTMAP LOGICAL="IO1_I" PHYSICAL="spi_rtl_io1_i"/>
-        <PORTMAP LOGICAL="IO1_O" PHYSICAL="spi_rtl_io1_o"/>
-        <PORTMAP LOGICAL="IO1_T" PHYSICAL="spi_rtl_io1_t"/>
-        <PORTMAP LOGICAL="SCK_I" PHYSICAL="spi_rtl_sck_i"/>
-        <PORTMAP LOGICAL="SCK_T" PHYSICAL="spi_rtl_sck_t"/>
-        <PORTMAP LOGICAL="SS_I" PHYSICAL="spi_rtl_ss_i"/>
-        <PORTMAP LOGICAL="SS_T" PHYSICAL="spi_rtl_ss_t"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
   </EXTERNALINTERFACES>
 
   <MODULES>
@@ -243,7 +203,7 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="clk_cnt_len" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_PWM_Unit_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_PWM_Unit_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2512,26 +2472,20 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="io0_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_t">
+        <PORT DIR="I" NAME="io0_i" SIGIS="undef" SIGNAME="External_Ports_miso">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_io0_t"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="miso"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="io1_i" SIGIS="undef" SIGNAME="axi_quad_spi_0_io1_i">
+        <PORT DIR="O" NAME="io0_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_io1_i"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="mosi"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="io1_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_io1_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_io1_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="io1_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_io1_t">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_io1_t"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" NAME="io0_t" SIGIS="undef"/>
+        <PORT DIR="I" NAME="io1_i" SIGIS="undef"/>
+        <PORT DIR="O" NAME="io1_o" SIGIS="undef"/>
+        <PORT DIR="O" NAME="io1_t" SIGIS="undef"/>
         <PORT DIR="O" NAME="ip2intc_irpt" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT"/>
         <PORT CLKFREQUENCY="50000000" DIR="I" NAME="s_axi_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
@@ -2628,37 +2582,35 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="sck_i" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_i">
+        <PORT DIR="I" NAME="sck_i" SIGIS="undef"/>
+        <PORT DIR="O" NAME="sck_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_sck_i"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="sck"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="sck_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_t">
+        <PORT DIR="O" NAME="sck_t" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="ss_i" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="ss_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_sck_t"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="cs"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="ss_i" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_i">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_ss_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="ss_t" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_t">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="spi_rtl_ss_t"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" NAME="ss_t" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="axi_quad_spi_0_SPI_0" NAME="SPI_0" TYPE="INITIATOR" VLNV="xilinx.com:interface:spi:1.0">
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="SPI_0" TYPE="INITIATOR" VLNV="xilinx.com:interface:spi:1.0">
           <PORTMAPS>
+            <PORTMAP LOGICAL="IO0_I" PHYSICAL="io0_i"/>
+            <PORTMAP LOGICAL="IO0_O" PHYSICAL="io0_o"/>
             <PORTMAP LOGICAL="IO0_T" PHYSICAL="io0_t"/>
             <PORTMAP LOGICAL="IO1_I" PHYSICAL="io1_i"/>
             <PORTMAP LOGICAL="IO1_O" PHYSICAL="io1_o"/>
             <PORTMAP LOGICAL="IO1_T" PHYSICAL="io1_t"/>
             <PORTMAP LOGICAL="SCK_I" PHYSICAL="sck_i"/>
+            <PORTMAP LOGICAL="SCK_O" PHYSICAL="sck_o"/>
             <PORTMAP LOGICAL="SCK_T" PHYSICAL="sck_t"/>
             <PORTMAP LOGICAL="SS_I" PHYSICAL="ss_i"/>
+            <PORTMAP LOGICAL="SS_O" PHYSICAL="ss_o"/>
             <PORTMAP LOGICAL="SS_T" PHYSICAL="ss_t"/>
           </PORTMAPS>
         </BUSINTERFACE>
@@ -2719,7 +2671,7 @@
     <MODULE COREREVISION="1" FULLNAME="/keyPad_Unit_0" HWVERSION="1.0" INSTANCE="keyPad_Unit_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="keyPad_Unit" VLNV="xilinx.com:module_ref:keyPad_Unit:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_keyPad_Unit_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_keyPad_Unit_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3800,8 +3752,8 @@
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_ACLK"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
-            <CONNECTION INSTANCE="PWM_Unit_0" PORT="clk"/>
             <CONNECTION INSTANCE="keyPad_Unit_0" PORT="clk"/>
+            <CONNECTION INSTANCE="PWM_Unit_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -5373,8 +5325,8 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M03_ARESETN"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M04_ARESETN"/>
-            <CONNECTION INSTANCE="PWM_Unit_0" PORT="reset"/>
             <CONNECTION INSTANCE="keyPad_Unit_0" PORT="reset"/>
+            <CONNECTION INSTANCE="PWM_Unit_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

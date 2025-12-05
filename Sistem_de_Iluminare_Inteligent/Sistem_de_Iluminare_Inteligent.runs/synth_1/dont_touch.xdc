@@ -18,12 +18,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ps
 # IP: bd/design_1/ip/design_1_rst_ps7_0_50M_0_2/design_1_rst_ps7_0_50M_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rst_ps7_0_50M_0 || ORIG_REF_NAME==design_1_rst_ps7_0_50M_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_PWM_Unit_0_0_2/design_1_PWM_Unit_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_PWM_Unit_0_0 || ORIG_REF_NAME==design_1_PWM_Unit_0_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_keyPad_Unit_0_0_2/design_1_keyPad_Unit_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_keyPad_Unit_0_0 || ORIG_REF_NAME==design_1_keyPad_Unit_0_0} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_axi_gpio_0_1_2/design_1_axi_gpio_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_0_1 || ORIG_REF_NAME==design_1_axi_gpio_0_1} -quiet] -quiet
 
@@ -38,6 +32,12 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ax
 
 # IP: bd/design_1/ip/design_1_axi_quad_spi_0_0_1/design_1_axi_quad_spi_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_quad_spi_0_0 || ORIG_REF_NAME==design_1_axi_quad_spi_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_PWM_Unit_0_1/design_1_PWM_Unit_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_PWM_Unit_0_1 || ORIG_REF_NAME==design_1_PWM_Unit_0_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_keyPad_Unit_0_1/design_1_keyPad_Unit_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_keyPad_Unit_0_1 || ORIG_REF_NAME==design_1_keyPad_Unit_0_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_auto_pc_0_2/design_1_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet

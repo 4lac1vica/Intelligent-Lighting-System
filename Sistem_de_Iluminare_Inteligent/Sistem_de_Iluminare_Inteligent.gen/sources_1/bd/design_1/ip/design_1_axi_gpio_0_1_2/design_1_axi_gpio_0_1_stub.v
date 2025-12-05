@@ -2,11 +2,11 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Wed Nov 19 12:40:33 2025
+// Date        : Thu Dec  4 17:19:18 2025
 // Host        : TinuPC04 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_axi_gpio_0_1 -prefix
-//               design_1_axi_gpio_0_1_ design_1_axi_gpio_0_3_stub.v
-// Design      : design_1_axi_gpio_0_3
+// Command     : write_verilog -force -mode synth_stub
+//               d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1_2/design_1_axi_gpio_0_1_stub.v
+// Design      : design_1_axi_gpio_0_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
 // --------------------------------------------------------------------------------

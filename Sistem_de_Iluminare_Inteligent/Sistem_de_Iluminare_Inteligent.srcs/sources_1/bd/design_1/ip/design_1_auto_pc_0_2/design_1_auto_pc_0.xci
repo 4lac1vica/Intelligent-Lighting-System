@@ -5,7 +5,7 @@
     "cell_name": "ps7_0_axi_periph/s00_couplers/auto_pc",
     "component_reference": "xilinx.com:ip:axi_protocol_converter:2.1",
     "ip_revision": "31",
-    "gen_directory": "../../../../../../Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0_2",
+    "gen_directory": "../../../../../../Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0",
     "parameters": {
       "component_parameters": {
         "SI_PROTOCOL": [ { "value": "AXI3", "value_src": "user", "value_permission": "bd_and_user", "resolve_type": "user", "usage": "all" } ],
@@ -58,7 +58,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "31" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0_2" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "rtl" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2024.1" } ],
