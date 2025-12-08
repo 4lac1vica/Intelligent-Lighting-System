@@ -29,6 +29,18 @@
 
 #define WAITTIME 200000
 
+u8 Read_Als(XSpi* spi){
+    u8 tx[3] = {0x00, 0x00, 0x00};
+    u8 rx[3] = {0, 0, 0};
+
+    XSpi_SetSlaveSelect(spi, 0xFE);
+    XSpi_Transfer(spi, tx, rx, 3);
+    
+
+    return rx[1];
+}
+
+
 int main()
 {   
 
@@ -88,15 +100,18 @@ int main()
         keypulse = XGpio_DiscreteRead(&gpio_keypulse, 1);
         dutyCycle = XGpio_DiscreteRead(&gpio_dutycycle, 1);
         
-        
-        
 
         
+        u8 lum = Read_Als(&spi);
+        xil_printf("Luminozitatea este %d", lum);
         
-        if (inputData & 0x1){
+        
+        
+        
+        if (inputData == 1){
         //suntem in modul automat 
             print("Suntem in modul automat. Luminozitatea este dictata de catre senzor.");
-            
+                    
             
         }
         else{
