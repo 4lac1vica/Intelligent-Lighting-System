@@ -55,7 +55,7 @@ void setLum(u8 value){
 
     
 
-    print("Luminozitatea a fost setat cu succes!"); 
+    print("Luminozitatea a fost setat cu succes!\r\n"); 
 }
 
 int main()
@@ -93,7 +93,7 @@ int main()
 
     spi_cfg = XSpi_LookupConfig(XPAR_AXI_QUAD_SPI_0_BASEADDR);
     if (!spi_cfg){
-        print("AXI SPI null");
+        print("AXI SPI null\r\n");
         return -1;
     }
 
@@ -106,27 +106,26 @@ int main()
     XSpi_SetSlaveSelect(&spi, 0x0);
 
     init_platform(); //incepem procesarea 
-    print("Am inceput procesarea!\n");
+    print("Am inceput procesarea!\r\n");
 
 
 
     while(1){ //bucla de procesare
         inputData = XGpio_DiscreteRead(&gpio_mode, 1);
-        keycode = XGpio_DiscreteRead(&gpio_keycode, 1);
-        keypulse = XGpio_DiscreteRead(&gpio_keypulse, 1);
+        
        
         
 
         
         u8 lum = Read_Als(&spi);
-        xil_printf("Luminozitatea este %d", lum);
+        xil_printf("Luminozitatea este %d\r\n", lum);
         
         
         
         
         if (inputData & 0x1){
         //suntem in modul automat 
-            print("Suntem in modul automat. Luminozitatea este dictata de catre senzor.");
+            print("Suntem in modul automat. Luminozitatea este dictata de catre senzor.\r\n");
             
             //daca lumina naturala este slaba atunci facem sa fie lumina. Lumina slaba reprezinta ce este pana la valoarea de 128. Lumina puternica reprezinta ce este in [129, 255]
             //daca lumina naturala este puternica atunci facem sa scada luminozitatea
@@ -203,8 +202,38 @@ int main()
         }
         else{
         //suntem in modul manual
-            print("Suntem in modul manual. Luminozitatea este controlata de catre keypad");
+            print("Suntem in modul manual. Luminozitatea este controlata de catre keypad\r\n");
+            keycode = XGpio_DiscreteRead(&gpio_keycode, 1);
+            keypulse = XGpio_DiscreteRead(&gpio_keypulse, 1);
 
+            if (keypulse == 1){
+                switch(keycode){
+                    case 0xA:   //crestem luminozitatea 
+                        if (lum < 250){
+                            lum += 16;
+                        }
+                        break;
+                    case 0xB:   //scadem luminozitatea
+                        if (lum > 16){
+                            lum -= 16;
+                        }
+                        break;
+                    case 0xC:   //Maxim 
+                        lum = 255;
+                        break;
+                    case 0xD:   //Minim
+                        lum = 0;                        
+                        break;
+                    default:    //taste de la 0 la 9
+                        lum = keycode  * 25;
+                        break;
+                }
+
+
+                setLum(lum);
+                usleep(150000); //aici facem debounce
+
+            }
             
         }
 
