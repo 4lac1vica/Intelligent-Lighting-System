@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Fri Dec  5 10:51:54 2025
+| Date         : Wed Dec 10 13:24:48 2025
 | Host         : TinuPC04 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design       : design_1_wrapper
@@ -1304,7 +1304,7 @@ Sources:            { design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
 
 Check Type        Corner  Lib Pin     Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I      n/a            2.155         20.000      17.845     BUFGCTRL_X0Y16  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/I
-Min Period        n/a     FDRE/C      n/a            1.474         20.000      18.526     ILOGIC_X1Y70    design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO0_I_REG/C
+Min Period        n/a     FDRE/C      n/a            1.474         20.000      18.526     ILOGIC_X1Y70    design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG/C
 Min Period        n/a     FDRE/C      n/a            1.474         20.000      18.526     OLOGIC_X1Y67    design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/LOGIC_FOR_MD_0_GEN.SPI_MODULE_I/RATIO_NOT_EQUAL_4_GENERATE.SCK_O_NQ_4_NO_STARTUP_USED.SCK_O_NE_4_FDRE_INST/C
 Min Period        n/a     FDRE/C      n/a            1.000         20.000      19.000     SLICE_X30Y98    design_1_i/PWM_Unit_0/inst/pwm_cnt_reg[0]/C
 Min Period        n/a     FDRE/C      n/a            1.000         20.000      19.000     SLICE_X30Y98    design_1_i/PWM_Unit_0/inst/pwm_cnt_reg[1]/C
@@ -4311,7 +4311,7 @@ Min Delay Paths
 Slack:                    inf
   Source:                 miso
                             (input port)
-  Destination:            design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO0_I_REG/D
+  Destination:            design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
@@ -4327,8 +4327,8 @@ Slack:                    inf
     T20                                               0.000     0.000 r  miso (IN)
                          net (fo=0)                   0.000     0.000    miso
     T20                  IBUF (Prop_ibuf_I_O)         0.252     0.252 r  miso_IBUF_inst/O
-                         net (fo=1, routed)           0.000     0.252    design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/io0_i
-    ILOGIC_X1Y70         FDRE                                         r  design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO0_I_REG/D
+                         net (fo=1, routed)           0.000     0.252    design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/io1_i
+    ILOGIC_X1Y70         FDRE                                         r  design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -4337,7 +4337,7 @@ Slack:                    inf
                          net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
                          net (fo=1577, routed)        0.894     1.260    design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/ext_spi_clk
-    ILOGIC_X1Y70         FDRE                                         r  design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO0_I_REG/C
+    ILOGIC_X1Y70         FDRE                                         r  design_1_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG/C
 
 Slack:                    inf
   Source:                 col_in[1]

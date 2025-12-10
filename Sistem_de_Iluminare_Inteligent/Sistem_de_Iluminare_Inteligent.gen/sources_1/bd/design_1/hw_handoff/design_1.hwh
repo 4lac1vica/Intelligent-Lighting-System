@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Dec  5 10:49:27 2025" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec 10 13:22:37 2025" VIVADOVERSION="2024.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.2" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -121,7 +121,7 @@
     </PORT>
     <PORT DIR="I" NAME="miso" SIGIS="undef" SIGNAME="External_Ports_miso">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_i"/>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io1_i"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="mosi" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
@@ -2472,18 +2472,18 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="io0_i" SIGIS="undef" SIGNAME="External_Ports_miso">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="miso"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" NAME="io0_i" SIGIS="undef"/>
         <PORT DIR="O" NAME="io0_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="mosi"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="io0_t" SIGIS="undef"/>
-        <PORT DIR="I" NAME="io1_i" SIGIS="undef"/>
+        <PORT DIR="I" NAME="io1_i" SIGIS="undef" SIGNAME="External_Ports_miso">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="miso"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="io1_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="io1_t" SIGIS="undef"/>
         <PORT DIR="O" NAME="ip2intc_irpt" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT"/>

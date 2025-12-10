@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Fri Dec  5 10:49:26 2025
+//Date        : Wed Dec 10 13:22:36 2025
 //Host        : TinuPC04 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -78,7 +78,7 @@ module design_1
   wire [0:0]axi_quad_spi_0_ss_o;
   wire [3:0]col_in_1;
   wire [0:0]gpio_io_i_0_1;
-  wire io0_i_0_1;
+  wire io1_i_0_1;
   wire [3:0]keyPad_Unit_0_key_code;
   wire keyPad_Unit_0_key_pulse;
   wire [3:0]keyPad_Unit_0_row_out;
@@ -233,7 +233,7 @@ module design_1
   assign col_in_1 = col_in[3:0];
   assign cs[0] = axi_quad_spi_0_ss_o;
   assign gpio_io_i_0_1 = sws[0];
-  assign io0_i_0_1 = miso;
+  assign io1_i_0_1 = miso;
   assign mosi = axi_quad_spi_0_io0_o;
   assign pwm_signal = PWM_Unit_0_pwm_signal;
   assign row_out[3:0] = keyPad_Unit_0_row_out;
@@ -329,9 +329,9 @@ module design_1
         .s_axi_wvalid(ps7_0_axi_periph_M03_AXI_WVALID));
   design_1_axi_quad_spi_0_0 axi_quad_spi_0
        (.ext_spi_clk(processing_system7_0_FCLK_CLK0),
-        .io0_i(io0_i_0_1),
+        .io0_i(1'b0),
         .io0_o(axi_quad_spi_0_io0_o),
-        .io1_i(1'b0),
+        .io1_i(io1_i_0_1),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(ps7_0_axi_periph_M04_AXI_ARADDR[6:0]),
         .s_axi_aresetn(rst_ps7_0_50M_peripheral_aresetn),
