@@ -24,13 +24,13 @@ set_property -dict { PACKAGE_PIN J14   IOSTANDARD LVCMOS33 } [get_ports col_in[2
 set_property src_info {type:XDC file:1 line:77 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN K14   IOSTANDARD LVCMOS33 } [get_ports col_in[3]]; #IO_L20P_T3_AD6P_35 Sch=JA4_R_P
 set_property src_info {type:XDC file:1 line:81 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN U20   IOSTANDARD LVCMOS33 } [get_ports cs]; #IO_L15N_T2_DQS_34 Sch=JB1_N
+set_property -dict { PACKAGE_PIN U20   IOSTANDARD LVCMOS33 } [get_ports miso]; #IO_L15N_T2_DQS_34 Sch=JB1_N
 set_property src_info {type:XDC file:1 line:82 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN T20   IOSTANDARD LVCMOS33 } [get_ports miso]; #IO_L15P_T2_DQS_34 Sch=JB1_p
+set_property -dict { PACKAGE_PIN T20   IOSTANDARD LVCMOS33 } [get_ports mosi]; #IO_L15P_T2_DQS_34 Sch=JB1_p
 set_property src_info {type:XDC file:1 line:83 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN W20   IOSTANDARD LVCMOS33 } [get_ports sck]; #IO_L16N_T2_34 Sch=JB2_N
 set_property src_info {type:XDC file:1 line:84 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN V20   IOSTANDARD LVCMOS33 } [get_ports mosi]; #IO_L16P_T2_34 Sch=JB2_P
+set_property -dict { PACKAGE_PIN V20   IOSTANDARD LVCMOS33 } [get_ports cs]; #IO_L16P_T2_34 Sch=JB2_P
 set_property src_info {type:XDC file:1 line:114 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { data_out[0] }]; #IO_L4P_T0_34 Sch=JE1
 set_property src_info {type:XDC file:1 line:115 export:INPUT save:INPUT read:READ} [current_design]

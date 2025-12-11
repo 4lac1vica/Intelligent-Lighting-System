@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Dec 10 13:22:46 2025
-# Process ID: 6424
+# Start of session at: Wed Dec 10 14:56:48 2025
+# Process ID: 23012
 # Current directory: D:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: D:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.runs/synth_1/design_1_wrapper.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores:8
 # CPU Logical cores :16
 # Host memory       :14702 MB
-# Swap memory       :6518 MB
-# Total Virtual     :21220 MB
-# Available Virtual :4132 MB
+# Swap memory       :5675 MB
+# Total Virtual     :20377 MB
+# Available Virtual :2163 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

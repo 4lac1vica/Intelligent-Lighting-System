@@ -1,3 +1,0 @@
-D:/SSC/SoftwareProiect/platform/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
-D:/SSC/SoftwareProiect/platform/zynq_fsbl/build/CMakeFiles/edit_cache.dir
-D:/SSC/SoftwareProiect/platform/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir

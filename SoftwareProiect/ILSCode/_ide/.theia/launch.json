@@ -26,7 +26,7 @@
           "isFsbl": false,
           "usingFSBL": {
             "initWithFSBL": true,
-            "fsblFile": "${workspaceFolder}\\platform\\export\\platform\\sw\\boot\\fsbl.elf",
+            "fsblFile": "${workspaceFolder}\\ILS\\export\\ILS\\sw\\boot\\fsbl.elf",
             "fsblExitSymbol": "FsblHandoffJtagExit"
           },
           "usingPs7Init": {

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Wed Dec 10 13:24:49 2025
+| Date             : Wed Dec 10 14:59:28 2025
 | Host             : TinuPC04 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.547        |
+| Total On-Chip Power (W)  | 1.546        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.406        |
@@ -54,7 +54,7 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.004 |        3 |       --- |             --- |
 | Slice Logic              |     0.001 |     3276 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1081 |     53200 |            2.03 |
+|   LUT as Logic           |    <0.001 |     1080 |     53200 |            2.03 |
 |   Register               |    <0.001 |     1484 |    106400 |            1.39 |
 |   CARRY4                 |    <0.001 |       23 |     13300 |            0.17 |
 |   LUT as Distributed RAM |    <0.001 |       12 |     17400 |            0.07 |
@@ -64,7 +64,7 @@ Table of Contents
 | I/O                      |    <0.001 |       14 |       125 |           11.20 |
 | PS7                      |     1.399 |        1 |       --- |             --- |
 | Static Power             |     0.141 |          |           |                 |
-| Total                    |     1.547 |          |           |                 |
+| Total                    |     1.546 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 

@@ -34,15 +34,18 @@ XGpio gpio_dutycycle;
 
 
 u8 Read_Als(XSpi* spi){
-    u8 tx[2] = {0x00, 0x00};
-    u8 rx[2] = {0};
+    u8 tx[3] = {0x00, 0x00, 0x00};
+    u8 rx[3] = {0, 0, 0};
 
-    XSpi_SetSlaveSelect(spi, 0xFE);
-    XSpi_Transfer(spi, tx, rx, 2);
-    XSpi_SetSlaveSelect(spi, 0xFF);
+    XSpi_SetSlaveSelect(spi, 0x01);
+    XSpi_Transfer(spi, tx, rx, 3);
+    
+    u16 raw = ((rx[0] & 0x0F) << 8) | rx[1];
+
+    u8 lum = raw >> 4;
     
 
-    return rx[1];
+    return lum;
 }
 
 void setLum(u8 value){
@@ -98,12 +101,23 @@ int main()
     }
 
     XSpi_CfgInitialize(&spi, spi_cfg, spi_cfg -> BaseAddress);
-        
-    XSpi_SetOptions(&spi, XSP_MASTER_OPTION | XSP_MANUAL_SSELECT_OPTION);
-
+/*
+    XSpi_SetOptions(&spi,
+    XSP_MASTER_OPTION |
+    XSP_MANUAL_SSELECT_OPTION);
+*/
+    XSpi_SetOptions(&spi,
+    XSP_MASTER_OPTION |
+    XSP_MANUAL_SSELECT_OPTION |
+    XSP_CLK_PHASE_1_OPTION |
+    XSP_CLK_ACTIVE_LOW_OPTION);
     XSpi_Start(&spi);
+        
+    
 
-    XSpi_SetSlaveSelect(&spi, 0x0);
+    
+
+    XSpi_SetSlaveSelect(&spi, 0x1);
 
     init_platform(); //incepem procesarea 
     print("Am inceput procesarea!\r\n");

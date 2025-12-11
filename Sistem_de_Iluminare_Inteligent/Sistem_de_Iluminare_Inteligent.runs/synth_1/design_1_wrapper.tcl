@@ -78,6 +78,7 @@ read_verilog -library xil_defaultlib D:/SSC/proiectSSC/Sistem_de_Iluminare_Intel
 add_files D:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_2/design_1_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_xbar_0_2/design_1_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0_2/design_1_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0_2/design_1_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0_2/design_1_rst_ps7_0_50M_0_ooc.xdc]
@@ -97,7 +98,6 @@ set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sist
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0_1/design_1_axi_quad_spi_0_0.xdc]
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0_1/design_1_axi_quad_spi_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0_1/design_1_axi_quad_spi_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/SSC/proiectSSC/Sistem_de_Iluminare_Inteligent/Sistem_de_Iluminare_Inteligent.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
