@@ -14,7 +14,12 @@ An intelligent lighting system represents a system that aims to modify the brigh
   - **FSM** (Finite State Machines)
   - **SPI Communication between the sensor and the SoC**
 
-
+**How to use**
+- The system works as follows: 
+  1) We select via a switch whether we want to be in manual mode or automatic mode
+  2) If we are in manual mode, then we use the keypad to enter the brightness by entering a value (0-1023).
+  3) If we are in automatic mode, the sensor takes the light level from the room and transmits the data to the processor. At this stage, depending on certain values, the LED light either increases in intensity or decreases.
+  
 
 
 
