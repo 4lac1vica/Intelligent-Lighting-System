@@ -19,7 +19,12 @@ An intelligent lighting system represents a system that aims to modify the brigh
   1) We select via a switch whether we want to be in manual mode or automatic mode
   2) If we are in manual mode, then we use the keypad to enter the brightness by entering a value (0-1023).
   3) If we are in automatic mode, the sensor takes the light level from the room and transmits the data to the processor. At this stage, depending on certain values, the LED light either increases in intensity or decreases.
-  
+
+
+**State Diagram**
+
+<img width="931" height="1043" alt="image" src="https://github.com/user-attachments/assets/bac5e58b-28b4-40b1-a5fa-e63ec5efe6b3" />
+
 
 
 
